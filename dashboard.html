@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mate AI Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body class="bg-gray-50">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-purple-600">Mate AI</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="p-2 rounded-full text-gray-400 hover:text-gray-500">
+                        <i class="fas fa-bell"></i>
+                    </button>
+                    <button class="p-2 rounded-full text-gray-400 hover:text-gray-500">
+                        <i class="fas fa-user"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Section -->
+    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+        <!-- Cards Section -->
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 mb-8">
+
+            <!-- Productivity Card -->
+            <div class="bg-white shadow rounded-lg p-5">
+                <div class="flex items-center">
+                    <div class="bg-blue-500 p-3 rounded-md text-white">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="ml-5">
+                        <h3 class="text-sm text-gray-500">Productivity</h3>
+                        <p class="text-3xl font-bold text-gray-900">85%</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Financial Goal Card -->
+            <div class="bg-white shadow rounded-lg p-5">
+                <div class="flex items-center">
+                    <div class="bg-green-500 p-3 rounded-md text-white">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="ml-5">
+                        <h3 class="text-sm text-gray-500">Savings Goal</h3>
+                        <p class="text-3xl font-bold text-gray-900">$5,000</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Health Insights Card -->
+            <div class="bg-white shadow rounded-lg p-5">
+                <div class="flex items-center">
+                    <div class="bg-red-500 p-3 rounded-md text-white">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <div class="ml-5">
+                        <h3 class="text-sm text-gray-500">Daily Steps</h3>
+                        <p class="text-3xl font-bold text-gray-900">8,742</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Goal Progress Card -->
+            <div class="bg-white shadow rounded-lg p-5">
+                <div class="flex items-center">
+                    <div class="bg-yellow-500 p-3 rounded-md text-white">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <div class="ml-5">
+                        <h3 class="text-sm text-gray-500">Goal Progress</h3>
+                        <p class="text-3xl font-bold text-gray-900">75%</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activities Card -->
+            <div class="bg-white shadow rounded-lg p-5">
+                <div class="flex items-center">
+                    <div class="bg-indigo-500 p-3 rounded-md text-white">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <div class="ml-5">
+                        <h3 class="text-sm text-gray-500">Recent Activities</h3>
+                        <p class="text-3xl font-bold text-gray-900">12 tasks</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Chat Section -->
+        <div class="bg-white shadow rounded-lg p-6">
+            <h2 class="text-lg font-medium text-gray-900 mb-4">Chat with Mate AI</h2>
+            <div class="h-64 overflow-y-auto mb-4" id="chatBox">
+                <div class="p-2 bg-gray-200 text-gray-800 rounded-lg mb-2">
+                    Hello! How can I assist you today?
+                </div>
+            </div>
+            <div class="flex">
+                <input type="text" id="chatInput"
+                    class="flex-grow rounded-l-md border-gray-300 focus:ring-purple-500 focus:border-purple-500"
+                    placeholder="Type your message...">
+                <button onclick="sendMessage()"
+                    class="bg-[#6a13b5] text-white px-4 py-2 rounded-r-md hover:bg-purple-700">
+                    Send
+                </button>
+            </div>
+        </div>
+
+        <!-- Recommendation Section -->
+        <div class="mt-8">
+            <h2 class="text-lg font-medium text-gray-900 mb-4">Personalized Recommendations</h2>
+            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+                <div class="bg-white shadow rounded-lg p-5">
+                    <h3 class="text-lg font-medium text-gray-900 mb-2">Increase Your Savings</h3>
+                    <p class="text-sm text-gray-500 mb-4">Set aside an extra $100 per month to reach your goal faster.
+                    </p>
+                    <button class="bg-[#6a13b5] text-white px-4 py-2 rounded-md hover:bg-purple-700">Adjust
+                        Budget</button>
+                </div>
+
+                <div class="bg-white shadow rounded-lg p-5">
+                    <h3 class="text-lg font-medium text-gray-900 mb-2">Boost Your Steps</h3>
+                    <p class="text-sm text-gray-500 mb-4">You're close to your daily step goal. A 10-minute walk will
+                        help!</p>
+                    <button class="bg-[#6a13b5] text-white px-4 py-2 rounded-md hover:bg-purple-700">Start Walk</button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Connect Apps Section -->
+        <div class="mt-8 bg-white shadow rounded-lg p-6">
+            <h2 class="text-lg font-medium text-gray-900 mb-4">Connect Your Apps</h2>
+            <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+                <button
+                    class="bg-white p-2 border border-gray-300 rounded-md flex items-center justify-center hover:bg-gray-100">
+                    <i class="fas fa-calendar-alt text-gray-500"></i> <span class="ml-2">Google Calendar</span>
+                </button>
+                <button
+                    class="bg-white p-2 border border-gray-300 rounded-md flex items-center justify-center hover:bg-gray-100">
+                    <i class="fas fa-heartbeat text-gray-500"></i> <span class="ml-2">Fitbit</span>
+                </button>
+                <button
+                    class="bg-white p-2 border border-gray-300 rounded-md flex items-center justify-center hover:bg-gray-100">
+                    <i class="fas fa-dollar-sign text-gray-500"></i> <span class="ml-2">Finance App</span>
+                </button>
+                <button
+                    class="bg-white p-2 border border-gray-300 rounded-md flex items-center justify-center hover:bg-gray-100">
+                    <i class="fas fa-plus text-gray-500"></i> <span class="ml-2">Add More</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function sendMessage() {
+            const message = document.getElementById('chatInput').value;
+            if (message.trim()) {
+                const chatBox = document.getElementById('chatBox');
+                const userMessage = document.createElement('div');
+                userMessage.classList.add('p-2', 'bg-[#6a13b5]', 'text-white', 'rounded-lg', 'mb-2', 'text-right');
+                userMessage.innerText = message;
+                chatBox.appendChild(userMessage);
+                document.getElementById('chatInput').value = '';
+            }
+        }
+    </script>
+</body>
+
+</html>
